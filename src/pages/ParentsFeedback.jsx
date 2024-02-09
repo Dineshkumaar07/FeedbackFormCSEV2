@@ -341,11 +341,11 @@ const ParentsFeedback = () => {
                 </form>
               </section>
             )}
-            {/* {thanks == 1 && (
+            {thanks == 1 && (
               <section>
                 <Thanks />
               </section>
-            )} */}
+            )}
             {loading ? (
               <SubmittingForm />
             ) : (

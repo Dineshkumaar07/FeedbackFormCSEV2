@@ -39,15 +39,15 @@ const FacultyFeedback = () => {
                 <form
                   onSubmit={handleSubmit(async (data) => {
                     console.log(data);
-                    // var index = 1;
-                    // console.log(urlAddress + routeAddresses[index]);
-                    // setLoading(true);
-                    // await axios
-                    //   .post(urlAddress + routeAddresses[index], data)
-                    //   .then((reponse) => {
-                    //     console.log(reponse);
-                    //     setLoading(false);
-                    //   });
+                    var index = 6;
+                    console.log(urlAddress + routeAddresses[index]);
+                    setLoading(true);
+                    await axios
+                      .post(urlAddress + routeAddresses[index], data)
+                      .then((reponse) => {
+                        console.log(reponse);
+                        setLoading(false);
+                      });
                     setThanks(!thanks);
                   })}
                 >
@@ -81,6 +81,22 @@ const FacultyFeedback = () => {
                     />
                     <p className="mb-1 text-red-600 sm:mb-3">
                       {errors.courseName?.message}
+                    </p>
+                  </div>
+                  <div className={labelDivStyle}>
+                    <label htmlFor="">Course Facilitator</label>
+                    <input
+                      {...register("courseFacilitator", {
+                        required: {
+                          value: true,
+                          message: "All fields are required",
+                        },
+                      })}
+                      type="text"
+                      className="rounded-sm px-1 py-1  focus:outline-red-500 border-2 "
+                    />
+                    <p className="mb-1 text-red-600 sm:mb-3">
+                      {errors.courseFacilitator?.message}
                     </p>
                   </div>
                   <div className={labelDivStyle}>

@@ -8,6 +8,7 @@ const routeAddresses = [
   "alumniFeedback/addAlumniFeedback",
   "graduateExitSurvey/addGraduateExitSurvey",
   "facultyFeedback/addFacultyFeedback",
+  "peerFeedback/addPeerFeedback",
 ];
 
 module.exports.urlAddress = urlAddress;

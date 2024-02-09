@@ -1067,7 +1067,7 @@ const RecruitersFeedback = () => {
                 <SubmittingForm />
               ) : (
                 step === 6 && (
-                  <section className>
+                  <section>
                     <Thanks />
                   </section>
                 )

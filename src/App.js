@@ -8,6 +8,8 @@ import EmployerFeedback from "./pages/EmployerFeedback";
 import GraduateExitSurvey from "./pages/GraduateExitSurvey";
 import AlumniFeedback from "./pages/AlumniFeedback";
 import FacultyFeedback from "./pages/FacultyFeedback";
+import PeerFeedback from "./pages/PeerFeedback";
+
 function App() {
   return (
     <Router>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/alumniFeedback" element={<AlumniFeedback />} />
         <Route path="/employerFeedback" element={<EmployerFeedback />} />
         <Route path="/facultyFeedback" element={<FacultyFeedback />} />
+        <Route path="/peerFeedback" element={<PeerFeedback />} />
       </Routes>
     </Router>
   );
