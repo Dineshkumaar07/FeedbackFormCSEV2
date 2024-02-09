@@ -488,6 +488,11 @@ const FacultyFeedback = () => {
                 </form>
               </section>
             )}
+            {thanks == 1 && (
+              <section>
+                <Thanks />
+              </section>
+            )}
 
             {loading ? (
               <SubmittingForm />
