@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import Thanks from "./Thanks";
-import SubmittingForm from "./SubmittingForm"
+import SubmittingForm from "./SubmittingForm";
 import { useForm } from "react-hook-form";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { urlAddress, routeAddresses } from "./API";
 import axios from "axios";
 
-
 const EmployerFeedback = () => {
   const [thanks, setThanks] = useState(0);
-  const [loading , setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -21,17 +20,17 @@ const EmployerFeedback = () => {
     " mb-9 self-start px-4 py-1 rounded-md text-red-500 font-semibold border-2 border-red-500 hover:bg-red-500 hover:text-white duration-200 mb-4";
   const labelDivStyle = "flex flex-col gap-3  ";
   const homeButtonStyle =
-  "self-start px-4 py-1 rounded-md text-white font-semibold border-2 border-white hover:bg-white hover:text-red-500 duration-200";
+    "self-start px-4 py-1 rounded-md text-white font-semibold border-2 border-white hover:bg-white hover:text-red-500 duration-200";
   return (
     <div className="w-3/4 flex flex-col justify-center  mx-auto h-100v  ">
       <div className="h-70v">
         <div className="bg-red-500 text-white mb-4 p-3 flex flex-col gap-3 rounded-lg ">
-        <div className="flex flex-col sm:flex-row gap-5 sm:gap-0  sm:w-full sm:justify-between sm:items-center">
-        <h1 className="text-3xl font-bold">Employer Feedback</h1>
-          <Link className={homeButtonStyle} to="/">
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-0  sm:w-full sm:justify-between sm:items-center">
+            <h1 className="text-3xl font-bold">Employer Feedback</h1>
+            <Link className={homeButtonStyle} to="/">
               Home
             </Link>
-        </div>
+          </div>
         </div>
         <div className="px-3 shadow-2xl rounded-lg">
           {!thanks && !loading && (
@@ -40,13 +39,15 @@ const EmployerFeedback = () => {
                 onSubmit={handleSubmit(async (data) => {
                   console.log(data);
                   var index = 3;
-                  console.log(urlAddress+routeAddresses[index]);
-                  setLoading(true)
-                  await axios.post(urlAddress+routeAddresses[index], data).then(reponse => {
-                    console.log(reponse);
-                  });
-                  setThanks(!thanks)
-                  setLoading(false)
+                  console.log(urlAddress + routeAddresses[index]);
+                  setLoading(true);
+                  await axios
+                    .post(urlAddress + routeAddresses[index], data)
+                    .then((reponse) => {
+                      console.log(reponse);
+                    });
+                  setThanks(!thanks);
+                  setLoading(false);
                 })}
               >
                 <div className={labelDivStyle}>
@@ -438,9 +439,7 @@ const EmployerFeedback = () => {
               </form>
             </section>
           )}
-          {
-            loading?(<SubmittingForm/>):(thanks==1 && ( <Thanks/>))
-          }
+          {loading ? <SubmittingForm /> : thanks === 1 && <Thanks />}
           {/* {thanks == 1 && (
             <section>
               <Thanks />

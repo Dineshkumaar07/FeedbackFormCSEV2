@@ -9,7 +9,7 @@ import axios from "axios";
 
 const CourseExitSurvey = () => {
   const [thanks, setThanks] = useState(0);
-  const [loading , setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -42,12 +42,12 @@ const CourseExitSurvey = () => {
                     console.log(data);
                     var index = 2;
                     console.log(urlAddress + routeAddresses[index]);
-                    setLoading(true)
+                    setLoading(true);
                     await axios
                       .post(urlAddress + routeAddresses[index], data)
                       .then((reponse) => {
                         console.log(reponse);
-                        setLoading(false)
+                        setLoading(false);
                       });
                     setThanks(!thanks);
                   })}
@@ -716,7 +716,7 @@ const CourseExitSurvey = () => {
             {loading ? (
               <SubmittingForm />
             ) : (
-              thanks == 1 && (
+              thanks === 1 && (
                 <section className>
                   <Thanks />
                 </section>

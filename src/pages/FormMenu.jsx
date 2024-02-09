@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const FormMenu = () => {
   const h1Style = "w-1/2 text-lg";
   const liDivStyle = "w-full flex justify-around border-b-2 pb-4 shadow-md ";
@@ -45,8 +44,15 @@ const FormMenu = () => {
         </Link>
 
         <Link to="/employerFeedback">
-          <div className="w-full flex justify-around  ">
+          <div className={liDivStyle}>
             <h1 className={h1Style}>Employer feedback</h1>
+            <button className={buttonStyle}>Open</button>
+          </div>
+        </Link>
+
+        <Link to="/facultyFeedback">
+          <div className="w-full flex justify-around  ">
+            <h1 className={h1Style}>Faculty feedback</h1>
             <button className={buttonStyle}>Open</button>
           </div>
         </Link>

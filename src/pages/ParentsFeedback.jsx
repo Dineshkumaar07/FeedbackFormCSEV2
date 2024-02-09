@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Thanks from "./Thanks";
-import SubmittingForm from "./SubmittingForm"
+import SubmittingForm from "./SubmittingForm";
 import { Link } from "react-router-dom";
 
 import { urlAddress, routeAddresses } from "./API";
@@ -346,12 +346,15 @@ const ParentsFeedback = () => {
                 <Thanks />
               </section>
             )} */}
-            {
-              loading? <SubmittingForm/> : thanks == 1 && (
+            {loading ? (
+              <SubmittingForm />
+            ) : (
+              thanks === 1 && (
                 <section>
                   <Thanks />
-                </section>)
-            }
+                </section>
+              )
+            )}
           </div>
         </div>
       </div>
